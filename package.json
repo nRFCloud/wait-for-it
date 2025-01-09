@@ -15,7 +15,7 @@
   "type": "module",
   "main": "waitForIt.ts",
   "scripts": {
-    "test": "npm test"
+    "test": "node --test --experimental-transform-types ./*.test.ts"
   },
   "dependencies": {
     "backoff": "2.5.0"
@@ -25,5 +25,16 @@
     "@types/backoff": "2.5.5",
     "prettier": "3.4.2"
   },
-  "prettier": "@bifravst/prettier-config"
+  "prettier": "@bifravst/prettier-config",
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "remoteTags": true,
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@sebbo2002/semantic-release-jsr"
+    ]
+  }
 }
