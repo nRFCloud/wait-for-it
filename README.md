@@ -11,6 +11,6 @@ npx jsr add --save-dev @nrfcloud/wait-for-it
 ## Usage
 
 ```typescript
-import * as wait_for_it from "@nrfcloud/wait-for-it";
+import { waitForIt } from "@nrfcloud/wait-for-it";
 const tenant = await wait_for_it<Tenant>(() => repo.getByUUID(e.aggregateUUID));
 ```

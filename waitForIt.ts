@@ -12,7 +12,7 @@ import { exponential } from 'backoff'
  *
  * @example Wait for a tenant to be available
  * ```ts
- * import * as wait_for_it from "@nrfcloud/wait-for-it";
+ * import { waitForIt } from "@nrfcloud/wait-for-it";
  *
  * const tenant = await wait_for_it<Tenant>(() =>
  *   repo.getByUUID(

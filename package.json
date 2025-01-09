@@ -1,6 +1,6 @@
 {
   "name": "@nrfcloud/wait-for-it",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Retries the given function using a backoff algorithm.",
   "homepage": "https://github.com/nrfcloud/wait-for-it#readme",
   "bugs": {
