@@ -21,6 +21,9 @@
     "backoff": "2.5.0"
   },
   "devDependencies": {
-    "@types/backoff": "2.5.5"
-  }
+    "@bifravst/prettier-config": "1.1.4",
+    "@types/backoff": "2.5.5",
+    "prettier": "3.4.2"
+  },
+  "prettier": "@bifravst/prettier-config"
 }
