@@ -5,7 +5,7 @@
 ## Install with NPM
 
 ```bash
-npx jsr add --save-dev @nrfcloud/wait-for-it
+npx jsr add (--save-prod|--save-dev) @nrfcloud/wait-for-it
 ```
 
 ## Usage
