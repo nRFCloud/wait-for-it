@@ -1,6 +1,6 @@
 # Contributing to `@nrfcloud/wait-for-it`
 
-Thanks for contributing! This is a published library
+This is a published library
 ([`@nrfcloud/wait-for-it`](https://jsr.io/@nrfcloud/wait-for-it) on JSR). The
 sections below cover the development setup, how to test your changes, and how a
 new version gets released.
@@ -8,9 +8,7 @@ new version gets released.
 ## Development setup
 
 1. Ensure you
-   [have access to the NPM repositories](https://nordicsemi.atlassian.net/wiki/spaces/MFLT/pages/1727136233/Nordic+Engineering+Tools+Setup+go+eng-tools#NPM)
-   and
-   [GitHub push access](https://nordicsemi.atlassian.net/wiki/spaces/MFLT/pages/1727136233/Nordic+Engineering+Tools+Setup+go+eng-tools#nRFCloud-Organization).
+   [have GitHub push access](https://nordicsemi.atlassian.net/wiki/spaces/MFLT/pages/1727136233/Nordic+Engineering+Tools+Setup+go+eng-tools#nRFCloud-Organization).
 1. Get your environment set up by running `npm ci`
 1. Make your changes locally in a git clone of the repo in your own branch.
 1. As you go, commit along the way so that you get type checking, testing, etc.
