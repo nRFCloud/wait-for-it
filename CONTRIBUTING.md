@@ -19,11 +19,6 @@ new version gets released.
 Run `npm test` for the unit tests. They run on Node.js' built-in test runner
 (`node --test`) directly against the TypeScript sources.
 
-> [!NOTE]  
-> If something in this section does not work, check out the commands in
-> [`.github/workflows/test-and-release.yaml`](.github/workflows/test-and-release.yaml),
-> which installs dependencies and runs the tests for every commit.
-
 ## Squash your commits
 
 1. Finally, create a commit that packages up all the changes.
