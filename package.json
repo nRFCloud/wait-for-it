@@ -15,7 +15,8 @@
   "type": "module",
   "main": "waitForIt.ts",
   "scripts": {
-    "test": "node --test --experimental-transform-types ./*.test.ts"
+    "test": "node --test --experimental-transform-types ./*.test.ts",
+    "prepare": "case \"$npm_command\" in install|ci) check-node-version --package ;; esac"
   },
   "dependencies": {
     "backoff": "2.5.0"
@@ -23,6 +24,7 @@
   "devDependencies": {
     "@bifravst/prettier-config": "1.1.17",
     "@types/backoff": "2.5.5",
+    "check-node-version": "4.2.1",
     "prettier": "3.9.6"
   },
   "prettier": "@bifravst/prettier-config",
@@ -36,5 +38,8 @@
       "@semantic-release/release-notes-generator",
       "@sebbo2002/semantic-release-jsr"
     ]
+  },
+  "engines": {
+    "npm": ">=12.0.2 <13"
   }
 }
