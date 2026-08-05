@@ -1,11 +1,11 @@
 # `@nrfcloud/wait-for-it`
 
-<https://jsr.io/@nrfcloud/wait-for-it>
+<https://www.npmjs.com/package/@nrfcloud/wait-for-it>
 
 ## Install with NPM
 
 ```bash
-npx jsr add (--save-prod|--save-dev) @nrfcloud/wait-for-it
+npm i (--save-prod|--save-dev) @nrfcloud/wait-for-it
 ```
 
 ## Usage

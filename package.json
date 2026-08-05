@@ -1,6 +1,6 @@
 {
   "name": "@nrfcloud/wait-for-it",
-  "version": "0.0.0-development",
+  "version": "1.0.7",
   "description": "Retries the given function using a backoff algorithm.",
   "homepage": "https://github.com/nrfcloud/wait-for-it#readme",
   "bugs": {
@@ -13,18 +13,36 @@
   "author": "Nordic Semiconductor ASA | nordicsemi.no",
   "license": "BSD-3-Clause",
   "type": "module",
-  "main": "waitForIt.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./npm/waitForIt.d.ts",
+        "default": "./npm/waitForIt.js"
+      }
+    }
+  },
+  "files": [
+    "npm",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
-    "test": "node --test --experimental-transform-types ./*.test.ts",
-    "prepare": "case \"$npm_command\" in install|ci) check-node-version --package ;; esac"
+    "test": "node --test --experimental-transform-types ./*.test.ts ./.npm/*.spec.ts",
+    "prepare": "case \"$npm_command\" in install|ci) check-node-version --package ;; esac",
+    "prepublishOnly": "node --experimental-strip-types ./.npm/compile.ts && npx tsc -P ./.npm/tsconfig.npm.json --outDir ./npm"
   },
   "dependencies": {
     "backoff": "2.5.0"
   },
   "devDependencies": {
     "@bifravst/prettier-config": "1.1.17",
+    "@swc/core": "1.15.47",
     "@types/backoff": "2.5.5",
     "check-node-version": "4.2.1",
+    "@types/node": "25.9.5",
+    "@typescript/native": "npm:typescript@7.0.2",
     "prettier": "3.9.6"
   },
   "prettier": "@bifravst/prettier-config",
@@ -36,7 +54,14 @@
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
-      "@sebbo2002/semantic-release-jsr"
+      "@semantic-release/npm",
+      [
+        "@semantic-release/github",
+        {
+          "successCommentCondition": false,
+          "failCommentCondition": false
+        }
+      ]
     ]
   },
   "engines": {

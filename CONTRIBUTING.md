@@ -1,9 +1,9 @@
 # Contributing to `@nrfcloud/wait-for-it`
 
 This is a published library
-([`@nrfcloud/wait-for-it`](https://jsr.io/@nrfcloud/wait-for-it) on JSR). The
-sections below cover the development setup, how to test your changes, and how a
-new version gets released.
+([`@nrfcloud/wait-for-it`](https://www.npmjs.com/package/@nrfcloud/wait-for-it)
+on NPM). The sections below cover the development setup, how to test your
+changes, and how a new version gets released.
 
 ## Development setup
 
@@ -16,8 +16,9 @@ new version gets released.
 
 ## Testing
 
-Run `npm test` for the unit tests. They run on Node.js' built-in test runner
-(`node --test`) directly against the TypeScript sources.
+1. Run `npx tsc` to type-check the project.
+1. Run `npm test` for the unit tests. They run on Node.js' built-in test runner
+   (`node --test`) directly against the TypeScript sources.
 
 ## Squash your commits
 
@@ -29,12 +30,25 @@ Run `npm test` for the unit tests. They run on Node.js' built-in test runner
 1. Get the code reviewed.
 1. Once approved and CI passes, rebase or squash away!
 
+## Building the NPM package
+
+The package is published as compiled JavaScript with type declarations in the
+`npm/` folder, which is created by the `prepublishOnly` hook:
+
+1. [`.npm/compile.ts`](.npm/compile.ts) transpiles the TypeScript sources using
+   [`@swc/core`](https://www.npmjs.com/package/@swc/core) and rewrites the `.ts`
+   import specifiers to `.js`.
+1. [TypeScript 7](https://www.npmjs.com/package/typescript) emits the type
+   declarations, using [`.npm/tsconfig.npm.json`](.npm/tsconfig.npm.json).
+
+Run `npm run prepublishOnly` to build it locally.
+
 ## Releasing a new version
 
 1. [`semantic-release` in the Test&Release workflow](.github/workflows/test-and-release.yaml)
    takes care of determining the next version from the conventional commits,
    creating a new GitHub release and publishing the package to
-   [JSR](https://jsr.io/@nrfcloud/wait-for-it).
+   [NPM](https://www.npmjs.com/package/@nrfcloud/wait-for-it).
 
 Once a new version is published, consumers can bump the dependency to pick it
 up.
