@@ -41,7 +41,7 @@
     "@swc/core": "1.16.2",
     "@types/backoff": "2.5.5",
     "check-node-version": "4.2.1",
-    "@types/node": "25.9.5",
+    "@types/node": "25.9.6",
     "@typescript/native": "npm:typescript@7.0.2",
     "prettier": "3.9.6"
   },
