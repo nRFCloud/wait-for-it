@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@bifravst/prettier-config": "2.0.3",
-    "@swc/core": "1.16.2",
+    "@swc/core": "1.16.13",
     "@types/backoff": "2.5.5",
     "check-node-version": "4.2.1",
     "@types/node": "25.9.8",
