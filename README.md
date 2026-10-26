@@ -1,8 +1,22 @@
 # `@nrfcloud/wait-for-it`
 
-<https://www.npmjs.com/package/@nrfcloud/wait-for-it>
+<https://github.com/nRFCloud/wait-for-it/pkgs/npm/wait-for-it>
 
-## Install with NPM
+## Installation
+
+The package is published to the
+[GitHub Packages registry](https://github.com/nRFCloud/wait-for-it/pkgs/npm/wait-for-it).
+Releases are also published to
+[npm](https://www.npmjs.com/package/@nrfcloud/wait-for-it).
+
+To install it, point the `@nrfcloud` scope to it in your project's `.npmrc` and
+[authenticate](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages)
+with a token that has the `read:packages` scope:
+
+```
+@nrfcloud:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
+```
 
 ```bash
 npm i (--save-prod|--save-dev) @nrfcloud/wait-for-it
