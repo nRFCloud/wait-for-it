@@ -50,8 +50,11 @@ jobs:
       - name: Publish to npm
         if: ${{ !cancelled() && steps.semantic-release.outcome != 'skipped' }}
         run: |
+          name="$(node -p 'require("./package.json").name')"
           version="$(node -p 'require("./package.json").version')"
-          if [ "$version" = "0.0.0-development" ]; then
+          # package.json keeps a real version in git, so a run without a new
+          # release must be detected by the version already being on npm.
+          if [ "$version" = "0.0.0-development" ] || [ -n "$(npm view "$name@$version" version --registry=https://registry.npmjs.org)" ]; then
             echo "No new release, skipping."
             exit 0
           fi
