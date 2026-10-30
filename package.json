@@ -30,7 +30,7 @@
     "access": "public"
   },
   "scripts": {
-    "test": "node --test --experimental-transform-types ./*.test.ts ./.npm/*.spec.ts",
+    "test": "node --test ./*.test.ts ./.npm/*.spec.ts",
     "prepare": "case \"$npm_command\" in install|ci) check-node-version --package ;; esac",
     "prepublishOnly": "node --experimental-strip-types ./.npm/compile.ts && npx tsc -P ./.npm/tsconfig.npm.json --outDir ./npm"
   },
@@ -42,7 +42,7 @@
     "@swc/core": "1.16.20",
     "@types/backoff": "2.5.5",
     "check-node-version": "4.2.1",
-    "@types/node": "25.9.9",
+    "@types/node": "26.6.5",
     "@typescript/native": "npm:typescript@7.0.2",
     "prettier": "3.9.10"
   },
